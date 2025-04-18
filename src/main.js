@@ -5,7 +5,7 @@ const canvas = document.getElementById('canvas')
 
 // 1. Scene 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color('#F0F0F0');
+scene.background = new THREE.Color('#000000');
 
 // 2. Camera 
 const camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight,0.1,1000)
@@ -14,7 +14,8 @@ camera.position.z = 5
 // 3. Object 
 
 const geometry = new THREE.DodecahedronGeometry();
-const material = new THREE.MeshBasicMaterial({color:"#468585"})
+const material = new THREE.MeshLambertMaterial({color:"#0xffffff",emissive:"#468585"})
+
 const dodecahedron = new THREE.Mesh(geometry,material)
 
 const boxGeometry = new THREE.BoxGeometry(2,0.1,2)
