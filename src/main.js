@@ -8,18 +8,19 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color('#000000');
 
 // 2. Camera 
-const camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight,0.1,1000)
-camera.position.z = 5
+const camera = new THREE.PerspectiveCamera(90,window.innerWidth / window.innerHeight,0.1,100)
+camera.position.z = 4
 
 // 3. Object 
 
 const geometry = new THREE.DodecahedronGeometry();
-const material = new THREE.MeshLambertMaterial({color:"#0xffffff",emissive:"#468585"})
+const material = new THREE.MeshLambertMaterial({emissive:"#F6E7D3"})
+
 
 const dodecahedron = new THREE.Mesh(geometry,material)
 
 const boxGeometry = new THREE.BoxGeometry(2,0.1,2)
-const boxMaterial = new THREE.MeshBasicMaterial({color:"B4B4B3"})
+const boxMaterial = new THREE.MeshBasicMaterial({color:"#B4B4B3"})
 
 const box  = new THREE.Mesh(boxGeometry,boxMaterial)
 box.position.y = -1.5
@@ -46,6 +47,8 @@ controls.enableZoom = true;
 controls.enablePan = true
 
 // 7.add animatinon 
+
+
 
 function animate(){
   requestAnimationFrame(animate)
